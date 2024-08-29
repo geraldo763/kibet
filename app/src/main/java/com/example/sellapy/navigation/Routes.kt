@@ -6,5 +6,7 @@ const val ROUT_DETAILS="details"
 const val ROUT_CONTACT="contact"
 const val ROUT_DASHBOARD="dashboard"
 const val ROUT_SPLASH="splash"
-const val ROUT_INTENT="splash"
+const val ROUT_INTENT="intent"
+const val ROUT_SIGNUP="signup"
+const val ROUT_LOGIN="login"
 

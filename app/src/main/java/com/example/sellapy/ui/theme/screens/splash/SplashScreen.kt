@@ -33,6 +33,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.sellapy.R
 import com.example.sellapy.navigation.ROUT_DASHBOARD
 import com.example.sellapy.navigation.ROUT_DETAILS
+import com.example.sellapy.navigation.ROUT_SIGNUP
 import com.example.sellapy.ui.theme.blue
 import com.example.sellapy.ui.theme.yellow
 import kotlinx.coroutines.delay
@@ -51,7 +52,7 @@ fun SplashScreen(navController: NavController){
         coroutine.launch {
 
             delay(3000)
-            navController.navigate(ROUT_DASHBOARD)
+            navController.navigate(ROUT_SIGNUP)
         }
 
 
