@@ -9,4 +9,6 @@ const val ROUT_SPLASH="splash"
 const val ROUT_INTENT="intent"
 const val ROUT_SIGNUP="signup"
 const val ROUT_LOGIN="login"
+const val ADD_PRODUCTS_URL = "add_products"
+const val VIEW_PRODUCTS_URL = "view_products"
 

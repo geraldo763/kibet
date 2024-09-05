@@ -1,7 +1,6 @@
 package com.example.sellapy.models
 
-class User {
-
+class user {
     var name:String = ""
     var email:String = ""
     var password:String = ""

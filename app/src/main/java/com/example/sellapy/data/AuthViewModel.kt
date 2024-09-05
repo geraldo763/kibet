@@ -1,20 +1,20 @@
 package com.example.sellapy.data
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import com.example.sellapy.models.User
+import com.example.sellapy.navigation.ADD_PRODUCTS_URL
 import com.example.sellapy.navigation.ROUT_DASHBOARD
 
 import com.example.sellapy.navigation.ROUT_HOME
-import com.example.sellapy.navigation.ROUT_INTENT
 import com.example.sellapy.navigation.ROUT_LOGIN
 import com.example.sellapy.navigation.ROUT_SIGNUP
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.auth.User
 
 
 class AuthViewModel(var navController: NavController, var context: Context){
@@ -27,7 +27,8 @@ class AuthViewModel(var navController: NavController, var context: Context){
         progress.setTitle("Loading")
         progress.setMessage("Please wait...")
     }
-    fun signup(name:String, email:String, password:String,confpassword:String){
+    @SuppressLint("RestrictedApi")
+    fun signup(name:String, email:String, password:String, confpassword:String){
 
 
         if (email.isBlank() || password.isBlank() ||confpassword.isBlank()){
@@ -61,6 +62,11 @@ class AuthViewModel(var navController: NavController, var context: Context){
 
     }
 
+    @SuppressLint("RestrictedApi")
+    private fun User(name: String, email: String, password: String, uid: String): User {
+        TODO("Not yet implemented")
+    }
+
     fun login(email: String, password: String){
 
         if (email.isBlank() || password.isBlank()){
@@ -92,7 +98,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(ROUT_INTENT)
+                    navController.navigate(ADD_PRODUCTS_URL)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }
